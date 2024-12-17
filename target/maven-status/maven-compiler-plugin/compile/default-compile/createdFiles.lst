@@ -1,0 +1,15 @@
+SessionServlet.class
+ShoppingCartServlet.class
+SingleMovieServlet.class
+TopMoviesServlet.class
+AutoCompleteServlet.class
+User.class
+InsertMovieServlet.class
+CartItem.class
+SingleStarServlet.class
+SearchServlet.class
+LoginServlet.class
+SingleGenreServlet.class
+LoginFilter.class
+AllGenresServlet.class
+PaymentProcessingServlet.class

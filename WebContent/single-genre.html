@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title></title>
+</head>
+<body>
+<!-- Load jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!-- Load our own JS file -->
+<script src="single-genre.js"></script>
+<!-- Load navbar -->
+<div id = "navbar-placeholder"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(function(){
+    $("#navbar-placeholder").load("navbar.html");
+  });
+</script>
+
+<!-- Id "movie_table" is useful for jQuery to find the html element with id, class here is mapping to Bootstrap defined class CSS -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-11"> <!-- Limit width to 8/12 columns -->
+      <h1 id="heading"></h1>
+      <table id="movie_table" class="table table-hover table-dark">
+        <!-- Create a table header -->
+        <thead>
+        <tr>
+          <!-- Titles of each column-->
+          <th>Title</th>
+          <th>Year</th>
+          <th>Director</th>
+          <th>Genres</th>
+          <th>Stars</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+        </thead>
+        <!-- Table body is left empty here, will be populated with the data retrieved with top-movies.js -->
+        <!-- Again, id "star_table_body" is useful for jQuery to find this html element -->
+        <tbody id="movie_table_body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+
+
+</html>

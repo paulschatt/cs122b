@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Cart</title>
+</head>
+<body>
+<!-- Load jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script src="cart.js"></script>
+<!-- Load navbar -->
+<div id = "navbar-placeholder"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(function(){
+    $("#navbar-placeholder").load("navbar.html");
+  });
+</script>
+
+<!-- Create Table -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-11">
+      <!-- Limit width to 8/12 columns -->
+      <table id=shopping_cart_table class="table table-hover table-dark">
+        <!-- Create a table header -->
+        <thead>
+        <tr>
+          <!-- Titles of each column-->
+          <th>Movie Title</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Change Quantity</th>
+          <th>Remove Items</th>
+        </tr>
+        </thead>
+        <!-- Table body is left empty here, will be populated with the data retrieved with top-movies.js -->
+        <!-- Again, id "star_table_body" is useful for jQuery to find this html element -->
+        <tbody id=shopping_cart_table_body></tbody>
+      </table>
+      <div id="total-price"  class="container mt-5 col-md-11 row justify-content-center" style="font-size: 40px; color:white">Total Price: $0</div>
+      <a href="place_order.html"><button type ='button' class='btn btn-dark' id='proceed'>Proceed to Payment</button></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

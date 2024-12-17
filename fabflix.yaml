@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment # Specifies that this resource is a Deployment, used for managing a set of replicas of a pod.
+metadata:
+  name: fabflix # Names this Deployment as "murphy-movies".
+spec:
+  replicas: 2 # Indicates that two replicas (pods) of the application should be running.
+  selector:
+    matchLabels:
+      app: fabflix # The selector specifies that this Deployment targets pods with the label "app: murphy-movies".
+  template:
+    metadata:
+      labels:
+        app: fabflix # Labels the pods with "app: murphy-movies" to match the selector.
+    spec:
+      containers:
+        - name: fabflix-container # Names the container within the pod as "murphy-movies-container".
+          image: paulschatt/2024-fall-cs-122b-team_schatt_anisman:v6
+          # Uses the Docker image "https://hub.docker.com/r/chenliteaching/cs122b-p5-murphy" for the container.
+          ports:
+            - name: http
+              containerPort: 8080 # Exposes port 8080 of the container.
+          resources:
+            limits:
+              cpu: "1" # Limits the container to use at most 1 CPU.
+              memory: "1Gi" # Limits the container to use at most 1 GiB of memory.
+      imagePullSecrets: # Specifies the secret to use for pulling private images from DockerHub.
+        - name: regcred #  References a Kubernetes secret named "regcred".
+---
+apiVersion: v1
+kind: Service # Specifies that this resource is a Service, which defines a logical set of pods and a policy to access them.
+metadata:
+  name: fabflix-service # Names this Service as "murphy-movies-service".
+spec:
+  selector:
+    app: fabflix # The selector specifies that this Service targets pods with the label "app: murphy-movies".
+  ports:
+    - name: http
+      port: 8080 # Exposes the service on port 8080.
+  type: ClusterIP # Specifies that the service is of type ClusterIP, making it accessible only within the cluster.

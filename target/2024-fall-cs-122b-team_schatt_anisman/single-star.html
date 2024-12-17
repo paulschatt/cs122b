@@ -1,0 +1,71 @@
+<!-- This example is following frontend and backend separation.
+
+    This .html performs two steps:
+    1. Create a html template skeleton, with all the elements defined (some left empty) and named with ids.
+    2. Load top-movies.js to populate the data into empty elements.
+    -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Single Star</title>
+</head>
+<body>
+<!-- Load jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!-- Load our own JS file -->
+<!-- The path is relative to top-movies.html, since these two files are in the same directory -->
+<!-- Note the url does not contain a "/" in the beginning, which means the url is relative to current path
+     otherwise the url is relative to the root path-->
+<script src="single-star.js"></script>
+<!-- Load navbar -->
+<div id = "navbar-placeholder"></div>
+<script>
+    $(function(){
+        $("#navbar-placeholder").load("navbar.html");
+    });
+</script>
+
+<!-- Id "star_table" is useful for jQuery to find the html element with id, class here is mapping to Bootstrap defined class CSS -->
+<h1 id="star_name"></h1>
+
+<!-- H3 body is left empty here, will be populated with the data retrieved with single-star.js -->
+<!-- single-star.js will find this html element by it's id "star_info" -->
+<h3 id="star_info"></h3>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-11"> <!-- Limit width to 8/12 columns -->
+            <table id=movie_table class="table table-hover table-dark sortable">
+                <thead>
+                    <tr>
+                        <th>Movie Title</th>
+                        <th>Director</th>
+                        <th>Year</th>
+                        <th>Genres</th>
+                        <th>Stars</th>
+                        <th>Add to Cart</th>
+                    </tr>
+                </thead>
+                <!-- Table body is left empty here, will be populated with the data retrieved with single-star.js -->
+                <!-- single-star.js will find this html element by it's id "movie_table_body" -->
+                <tbody id=movie_table_body></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+
+
+</html>

@@ -1,0 +1,111 @@
+body {
+    background-color: #282a2e;
+    color: #282a2e;
+}
+
+header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+header * {
+    display: inline;
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    text-align:center;
+    margin-top: 40px;
+    padding-top: 10px;
+    font-size: 2.5rem;
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+table {
+    color: white;
+}
+
+h3 {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+a {
+    color: white;
+    text-align: center;/* Change link color */
+    text-decoration: none; /* Remove underline */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: bold;
+}
+
+
+.custom-table{
+    color:#E97451;
+    padding: 10px 20px;
+}
+
+.custom-table a {
+    color: white;          /* Override Bootstrap link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.custom-table a:hover {
+    color: #E97451;       /* Change hover color */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Custom styles for overriding btn-dark */
+.btn-dark {
+    background-color: #454d55;
+    border-color: #454d55;
+    margin-right:10px;!important;
+    margin-left:10px;!important;
+}
+
+/* Optional: Hover effect */
+.btn-dark:hover {
+    background-color: #E97451;!important;
+    border-color: #343a40;     /* Custom hover border color */
+}
+
+a:hover {
+    color: #E97451;            /* Change color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.column {
+    display: block;
+    text-align: center;
+}
+
+.navbar .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #E97451 !important;
+    top: 0; !important;
+}
+.navbar .navbar-brand{
+    color: #E97451 !important;
+}
+
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+.autocomplete-searchbox {
+    width: 1200px;
+}

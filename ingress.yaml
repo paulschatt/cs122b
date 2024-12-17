@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx # Specifies that this Ingress resource should be handled by the nginx Ingress controller.
+    nginx.ingress.kubernetes.io/affinity: "cookie" # # Enables session affinity based on cookies, ensuring requests from the same client are routed to the same backend.
+    nginx.ingress.kubernetes.io/session-cookie-name: "stickounet" # Sets the name of the session cookie used for maintaining session affinity.
+    nginx.ingress.kubernetes.io/session-cookie-expires: "172800" # Specifies the expiration time of the session cookie in seconds (172800 seconds = 2 days).
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "172800" # Sets the maximum age of the session cookie in seconds, aligning with the expiration time.
+  name: fabflix-ingress # Names this Ingress resource as "murphy-movies-ingress".
+  namespace: default
+spec:
+  rules:
+    - http:
+        paths:
+          - backend:
+              service:
+                name: fabflix-service # Points to the service named "murphy-movies-service". The value should match the name of the service.
+                port:
+                  number: 8080 # Specifies that the service is listening on port 8080.
+            path: / # # Defines the path to match incoming requests. Here, "/" means the root path.
+            pathType: Prefix # # Indicates that the path is a prefix match, so any request path starting with "/" will be routed to the backend service.

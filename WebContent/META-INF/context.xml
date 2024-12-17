@@ -1,0 +1,20 @@
+<Context>
+        <Resource name="jdbc/readconnect"
+                  auth="Container"
+                  driverClassName="com.mysql.cj.jdbc.Driver"
+                  type="javax.sql.DataSource"
+                  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+                  maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+                  username="mytestuser"
+                  password="My6$Password"
+                  url="jdbc:mysql://mysql-secondary:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false"/>
+        <Resource name="jdbc/writeconnect"
+                  auth="Container"
+                  driverClassName="com.mysql.cj.jdbc.Driver"
+                  type="javax.sql.DataSource"
+                  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+                  maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+                  username="mytestuser"
+                  password="My6$Password"
+                  url="jdbc:mysql://mysql-primary:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false"/>
+</Context>

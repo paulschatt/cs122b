@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Home</title>
+</head>
+<body>
+<!-- Load jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js"></script>
+<!-- Load navbar -->
+<div id = "navbar-placeholder"></div>
+<script>
+  $(function(){
+    $("#navbar-placeholder").load("navbar.html");
+  });
+</script>
+<!-- Id "movie_table" is useful for jQuery to find the html element with id, class here is mapping to Bootstrap defined class CSS -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-11"> <!-- Limit width to 8/12 columns -->
+      <h1>WELCOME TO FABFLIX!</h1>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-11">
+      <form class="form-inline my-2 my-lg-0" id="search-form">
+        <input id="autocomplete" name ="titleInput" class="autocomplete-searchbox form-control" type="text"/>
+        <input id="yearInput" class="form-control mr-sm-2" type="search" placeholder="Year" aria-label="Search">
+        <input id="directorInput" class="form-control mr-sm-2" type="search" placeholder="Director" aria-label="Search">
+        <input id="starInput" class="form-control mr-sm-2" type="search" placeholder="Star" aria-label="Search">
+        <select id="limitSelect" class="form-control mr-sm-2" aria-label="Results per page">
+          <option value="10">10 per page</option>
+          <option value="25">25 per page</option>
+          <option value="50">50 per page</option>
+          <option value="100">100 per page</option>
+        </select>
+        <button id="search-bar" class="btn btn-outline-success my-2 my-sm-0 search-button" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div id = "genre-column" class="column">
+      <h1>BROWSE BY GENRE</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div id = "title-column" class="column">
+      <h1>BROWSE BY TITLE</h1>
+    </div>
+  </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
